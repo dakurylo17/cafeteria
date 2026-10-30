@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Keuken · Cafetaria De Zeeheld</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/order.css">
+  <link rel="stylesheet" href="css/kitchen.css">
+</head>
+<body class="kitchen">
+  <header class="k-header">
+    <div class="k-header__inner">
+      <a href="index.html" class="logo logo--light">
+        <img src="img/favicon.svg" alt="" width="40" height="40">
+        <span class="logo__text"><small data-i18n="k.title">Keuken</small>De Zeeheld</span>
+      </a>
+      <div class="k-header__meta">
+        <span class="k-clock" id="clock">--:--</span>
+        <label class="toggle toggle--light">
+          <input type="checkbox" id="sound">
+          <span class="toggle__track"></span>
+          <span data-i18n="k.sound">Geluid bij nieuwe bestelling</span>
+        </label>
+        <button class="lang lang--light" id="lang" type="button">EN</button>
+        <a class="k-back" href="index.html" data-i18n="k.back">Naar de website</a>
+      </div>
+    </div>
+    <p class="k-demo" data-i18n="k.demo">Demo-modus: bestellingen worden alleen in deze browser bewaard.</p>
+  </header>
+
+  <main class="board" id="board"></main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/kitchen.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* Keukenscherm */
+body.kitchen { background: #eef0f4; min-height: 100vh; }
+
+.k-header { background: var(--navy); color: #fff; }
+.k-header__inner {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  padding: .9rem 24px;
+}
+.k-header__meta { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem 1.4rem; font-size: .9rem; }
+.k-clock { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--fry); font-variant-numeric: tabular-nums; }
+.k-back { color: #d5ddec; }
+.toggle--light { color: #fff; }
+.lang--light { border-color: #fff; color: #fff; }
+.lang--light:hover { background: #fff; color: var(--navy); }
+.k-demo { margin: 0; padding: .4rem 24px; background: #fff4d6; color: #6b5414; font-size: .85rem; text-align: center; }
+
+.board {
+  display: grid; grid-template-columns: repeat(4, minmax(260px, 1fr)); gap: 1rem;
+  padding: 1.2rem 24px 2rem;
+  overflow-x: auto;
+  align-items: start;
+}
+.column { background: #e2e6ee; border-radius: 18px; padding: .9rem; min-height: 60vh; }
+.column h2 { font-size: 1.2rem; display: flex; align-items: center; gap: .5rem; margin: .2rem .3rem .9rem; }
+.column__count { font-family: var(--font-body); font-size: .8rem; background: var(--navy); color: #fff; border-radius: 999px; padding: .1rem .55rem; }
+.column--new h2 { color: #1e3a8a; }
+.column--preparing h2 { color: #7a5a00; }
+.column--ready h2 { color: #14653a; }
+.column__list { display: grid; gap: .8rem; }
+.column__empty { margin: 2rem 0; text-align: center; color: var(--muted); font-size: .9rem; }
+
+.ticket {
+  background: #fff; border-radius: 14px; padding: 1rem;
+  box-shadow: 0 4px 14px -8px rgba(20,40,75,.35);
+  border-top: 5px solid #94a3b8;
+  font-size: .95rem;
+}
+.ticket--new { border-top-color: #3b82f6; animation: arrive .5s ease; }
+.ticket--preparing { border-top-color: var(--fry); }
+.ticket--ready { border-top-color: var(--green); }
+.ticket--done, .ticket--cancelled { opacity: .7; }
+@keyframes arrive { from { transform: scale(.96); opacity: 0; } }
+
+.ticket__head { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; margin-bottom: .6rem; }
+.ticket__no { font-family: var(--font-display); font-size: 1.7rem; color: var(--navy); line-height: 1; }
+.ticket__time { text-align: right; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
+.ticket__time small { display: block; text-transform: none; letter-spacing: 0; color: var(--red); font-size: .8rem; }
+.ticket__adjust { display: flex; align-items: center; gap: .3rem; justify-content: flex-end; margin-top: .15rem; }
+.ticket__adjust b { font-family: var(--font-display); font-size: 1.6rem; color: var(--navy); letter-spacing: 0; line-height: 1; }
+.ticket__adjust button { border: 1.5px solid var(--line); background: var(--cream); border-radius: 8px; font: inherit; font-size: .75rem; font-weight: 700; padding: .15rem .35rem; cursor: pointer; color: var(--navy); }
+.ticket__adjust button:hover { border-color: var(--navy); }
+
+.ticket__who { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .7rem; margin-bottom: .6rem; }
+.ticket__who a { color: var(--navy); }
+.ticket__items { list-style: none; margin: 0 0 .5rem; padding: .6rem .7rem; background: var(--cream); border-radius: 10px; }
+.ticket__items li { padding: .15rem 0; }
+.ticket__items b { display: inline-block; min-width: 1.8rem; color: var(--red); }
+.ticket__note { margin: 0 0 .5rem; padding: .5rem .7rem; background: #fff4d6; border-radius: 10px; font-weight: 600; }
+.ticket__foot { display: flex; justify-content: space-between; align-items: center; gap: .5rem; font-size: .82rem; color: var(--muted); }
+.ticket__actions { display: flex; gap: .5rem; margin-top: .8rem; }
+.ticket__actions .btn { flex: 1; padding: .6rem .8rem; font-size: .9rem; }
+.ticket__actions .btn--outline { flex: 0 0 auto; }
+
+@media (max-width: 760px) {
+  .board { grid-template-columns: repeat(4, 85vw); scroll-snap-type: x mandatory; padding-inline: 16px; }
+  .column { scroll-snap-align: start; }
+  .k-header__inner { padding-inline: 16px; }
+}

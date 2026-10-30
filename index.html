@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cafetaria De Zeeheld · Snackbar in Groningen</title>
+  <meta name="description" content="Cafetaria De Zeeheld aan de Paterswoldseweg 19 in Groningen. Verse patat, Hollandse snacks, burgers en broodjes. Eten ter plaatse, afhalen en bezorgen.">
+  <meta name="theme-color" content="#14284b">
+  <meta property="og:title" content="Cafetaria De Zeeheld · Groningen">
+  <meta property="og:description" content="Verse patat, Hollandse snacks en burgers. Bestel online en haal af op de Paterswoldseweg 19.">
+  <meta property="og:image" content="img/photos/gevel-deur.jpg">
+  <meta property="og:type" content="restaurant">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/order.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FastFoodRestaurant",
+    "name": "Cafetaria De Zeeheld",
+    "telephone": "+31503123235",
+    "priceRange": "€1–10",
+    "servesCuisine": ["Snacks", "Patat", "Burgers"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Paterswoldseweg 19",
+      "postalCode": "9726 BB",
+      "addressLocality": "Groningen",
+      "addressCountry": "NL"
+    },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "185" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"], "opens": "11:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday", "Monday", "Tuesday"], "opens": "16:00", "closes": "22:00" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="status" id="status"><span class="status__dot"></span><span id="status-text">…</span></span>
+      <a class="topbar__phone" href="tel:+31503123235">📞 050 312 3235</a>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="Cafetaria De Zeeheld">
+        <img src="img/favicon.svg" alt="" width="40" height="40">
+        <span class="logo__text"><small>Cafetaria</small>De Zeeheld</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#menu" data-i18n="nav.menu">Menu</a>
+        <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+        <a href="#sfeer" data-i18n="nav.gallery">Sfeer</a>
+        <a href="#info" data-i18n="nav.hours">Openingstijden</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <button class="lang" id="lang" type="button" aria-label="Switch language / Taal wisselen">EN</button>
+        <button class="account-btn" id="account-btn" type="button"><span aria-hidden="true">👤</span><span id="account-label">Inloggen</span></button>
+        <button class="cart-btn" id="cart-btn" type="button" aria-label="Mandje / Cart"><span aria-hidden="true">🛒</span><span class="cart-btn__count" id="cart-count" hidden>0</span></button>
+        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <button class="order-strip" id="order-strip" type="button" hidden></button>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Snackbar · Paterswoldseweg 19, Groningen</p>
+          <h1 data-i18n="hero.title">Echte Hollandse snacks,<br><span>met liefde gebakken.</span></h1>
+          <p class="hero__lead" data-i18n="hero.lead">Grote porties patat, knapperige kroketten, sappige burgers en de beste pindasaus van de buurt. Kom langs, haal af of laat het bezorgen.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#menu" data-i18n="hero.order">Bestel online</a>
+            <a class="btn btn--ghost" href="tel:+31503123235" data-i18n="hero.call">Bel ons</a>
+          </div>
+          <div class="hero__meta">
+            <a class="rating" href="#reviews">
+              <span class="stars" style="--rating: 4.6" aria-hidden="true">★★★★★</span>
+              <strong>4,6</strong> <span data-i18n="hero.reviews">· 185 Google-reviews</span>
+            </a>
+            <span class="price">€ 1–10 <span data-i18n="hero.pp">p.p.</span></span>
+          </div>
+        </div>
+        <div class="hero__art">
+          <figure class="hero__photo hero__photo--main">
+            <img src="img/photos/burger.jpg" width="590" height="780" alt="Burger met patat, mayonaise en ketchup" data-i18n-alt="photo.burger">
+          </figure>
+          <figure class="hero__photo hero__photo--small">
+            <img src="img/photos/gevel-deur.jpg" width="590" height="333" alt="De rode deur van Cafetaria De Zeeheld" data-i18n-alt="photo.door">
+          </figure>
+          <div class="hero__sticker" aria-hidden="true"><strong data-i18n="hero.sticker1">Grote</strong><span data-i18n="hero.sticker2">porties!</span></div>
+        </div>
+      </div>
+      <svg class="waves" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 40c120 30 240 30 360 0s240-30 360 0 240 30 360 0 240-30 360 0v40H0z"/>
+      </svg>
+    </section>
+
+    <section class="services">
+      <div class="container services__grid">
+        <div class="service"><span class="service__icon">🪑</span><div><strong data-i18n="svc.dine">Eten ter plaatse</strong><small data-i18n="svc.dineSub">Gezellig binnen zitten</small></div></div>
+        <div class="service"><span class="service__icon">🛍️</span><div><strong data-i18n="svc.take">Online bestellen</strong><small data-i18n="svc.takeSub">Afhalen op een vaste tijd</small></div></div>
+        <div class="service"><span class="service__icon">🛵</span><div><strong data-i18n="svc.deliver">Bezorgen</strong><small data-i18n="svc.deliverSub">Warm bij je thuis</small></div></div>
+        <div class="service"><span class="service__icon">💶</span><div><strong data-i18n="svc.price">Voor elk budget</strong><small data-i18n="svc.priceSub">€ 1–10 per persoon</small></div></div>
+      </div>
+    </section>
+
+    <section class="promo" id="promo">
+      <div class="container">
+        <div class="promo__inner">
+          <div class="promo__badge" aria-hidden="true">−10%</div>
+          <div class="promo__text">
+            <h2 id="promo-title">Word lid en krijg 10% korting</h2>
+            <p id="promo-text">Maak gratis een account aan en krijg 10% korting op elke afhaalbestelling.</p>
+          </div>
+          <button class="btn btn--primary" id="promo-btn" type="button">Gratis registreren</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="menu.eyebrow">Onze menukaart</p>
+          <h2 data-i18n="menu.title">Wat mag het zijn?</h2>
+        </div>
+
+        <div class="menu__tools" id="menu-tools">
+          <div class="chips" id="chips" role="tablist"></div>
+          <div class="menu__filters">
+            <label class="search">
+              <span aria-hidden="true">🔍</span>
+              <input type="search" id="search" placeholder="Zoek een snack…" data-i18n-placeholder="menu.search" autocomplete="off">
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="veg-only">
+              <span class="toggle__track"></span>
+              <span data-i18n="menu.veg">Alleen vega</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="menu__grid" id="menu-grid"></div>
+        <p class="menu__empty" id="menu-empty" hidden data-i18n="menu.empty">Niets gevonden. Probeer een andere zoekterm.</p>
+
+        <div class="extras">
+          <span class="extras__icon" aria-hidden="true">🍦</span>
+          <div>
+            <strong data-i18n="extras.title">Wij verkopen ook (soft)ijs, milkshakes en diverse dranken.</strong>
+            <p data-i18n="extras.text">Vraag aan de balie naar de smaken van vandaag. En vergeet de pindasaus niet!</p>
+          </div>
+        </div>
+        <p class="menu__legal" data-i18n="menu.legal">Prijzen in euro's, inclusief btw. Wijzigingen voorbehouden. Allergieën? Vraag het ons gerust.</p>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="reviews__head">
+          <div class="section-head">
+            <p class="eyebrow" data-i18n="rev.eyebrow">Wat gasten zeggen</p>
+            <h2 data-i18n="rev.title">Geliefd in de buurt</h2>
+          </div>
+          <div class="score">
+            <strong>4,6</strong>
+            <div>
+              <span class="stars stars--lg" style="--rating: 4.6" aria-label="4,6 van 5 sterren">★★★★★</span>
+              <small data-i18n="rev.count">185 reviews op Google</small>
+            </div>
+          </div>
+        </div>
+        <div class="reviews__grid">
+          <figure class="review">
+            <span class="stars" style="--rating: 5" aria-hidden="true">★★★★★</span>
+            <blockquote>“Very sweet people. The fry portions are very big and cheap.”</blockquote>
+            <figcaption><span class="avatar">LG</span> Local Guide <small data-i18n="rev.ago1">· 6 maanden geleden</small></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="stars" style="--rating: 5" aria-hidden="true">★★★★★</span>
+            <blockquote>“Nice place to grab a snack. Friendly owners and quick service, not to mention the great taste!”</blockquote>
+            <figcaption><span class="avatar">JV</span> Jochem V. <small data-i18n="rev.ago2">· 11 maanden geleden</small></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="stars" style="--rating: 5" aria-hidden="true">★★★★★</span>
+            <blockquote>“The best place to order your local Dutch snacks! … And definitely check their peanut sauce, it's sooo good.”</blockquote>
+            <figcaption><span class="avatar">LK</span> Latok K. <small data-i18n="rev.ago3">· 4 jaar geleden</small></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="sfeer">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="gal.eyebrow">Kom binnen</p>
+          <h2 data-i18n="gal.title">Licht, schoon en gezellig</h2>
+          <p class="section-lead" data-i18n="gal.text">Schuif aan bij een van onze tafels en eet je snack vers en warm, of haal je bestelling op aan de toonbank.</p>
+        </div>
+        <div class="gallery__grid" id="gallery">
+          <button type="button" class="gallery__item gallery__item--big" data-caption="photo.interior1" data-credit="Cafetaria De Zeeheld">
+            <img src="img/photos/interieur-1.jpg" width="590" height="440" loading="lazy" alt="Interieur" data-i18n-alt="photo.interior1">
+          </button>
+          <button type="button" class="gallery__item" data-caption="photo.interior2" data-credit="Cafetaria De Zeeheld">
+            <img src="img/photos/interieur-2.jpg" width="590" height="390" loading="lazy" alt="Toonbank" data-i18n-alt="photo.interior2">
+          </button>
+          <button type="button" class="gallery__item" data-caption="photo.interior3" data-credit="Cafetaria De Zeeheld">
+            <img src="img/photos/interieur-3.jpg" width="590" height="394" loading="lazy" alt="Bij het raam" data-i18n-alt="photo.interior3">
+          </button>
+          <button type="button" class="gallery__item" data-caption="photo.corner" data-credit="Hermes v. A.">
+            <img src="img/photos/gevel-hoek.jpg" width="590" height="442" loading="lazy" alt="Gevel" data-i18n-alt="photo.corner">
+          </button>
+          <button type="button" class="gallery__item" data-caption="photo.kroket" data-credit="Thijs H.">
+            <img src="img/photos/kroket.jpg" width="590" height="780" loading="lazy" alt="Kroket" data-i18n-alt="photo.kroket">
+          </button>
+          <button type="button" class="gallery__item" data-caption="photo.skyline" data-credit="Cafetaria De Zeeheld">
+            <img src="img/photos/skyline.jpg" width="590" height="333" loading="lazy" alt="Skyline" data-i18n-alt="photo.skyline">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto" hidden>
+      <button type="button" class="lightbox__btn lightbox__close" data-lb="close" aria-label="Sluiten / Close">✕</button>
+      <button type="button" class="lightbox__btn lightbox__prev" data-lb="prev" aria-label="Vorige / Previous">‹</button>
+      <figure class="lightbox__figure">
+        <img id="lightbox-img" src="" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <button type="button" class="lightbox__btn lightbox__next" data-lb="next" aria-label="Volgende / Next">›</button>
+    </div>
+
+    <section class="info" id="info">
+      <div class="container info__grid">
+        <div class="card hours">
+          <h2 data-i18n="info.hours">Openingstijden</h2>
+          <table id="hours-table">
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="card contact" id="contact">
+          <figure class="contact__photo">
+            <img src="img/photos/gevel-straat.jpg" width="590" height="560" loading="lazy" alt="Cafetaria De Zeeheld" data-i18n-alt="photo.street">
+            <figcaption data-i18n="info.find">Je herkent ons aan het bord op de hoek.</figcaption>
+          </figure>
+          <h2 data-i18n="info.contact">Contact &amp; adres</h2>
+          <ul class="contact__list">
+            <li><span aria-hidden="true">📍</span><div><strong>Paterswoldseweg 19</strong><br>9726 BB Groningen</div></li>
+            <li><span aria-hidden="true">📞</span><div><a href="tel:+31503123235"><strong>050 312 3235</strong></a><br><small data-i18n="info.callHint">Bel voor afhalen of bezorgen</small></div></li>
+          </ul>
+          <div class="contact__cta">
+            <a class="btn btn--primary" href="tel:+31503123235" data-i18n="info.call">Bel nu</a>
+            <a class="btn btn--outline" href="https://www.google.com/maps/dir/?api=1&amp;destination=Paterswoldseweg+19,+9726+BB+Groningen" target="_blank" rel="noopener" data-i18n="info.route">Route plannen</a>
+          </div>
+        </div>
+
+        <div class="map">
+          <iframe title="Kaart: Cafetaria De Zeeheld" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Cafetaria%20De%20Zeeheld%2C%20Paterswoldseweg%2019%2C%209726%20BB%20Groningen&amp;z=16&amp;output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="logo logo--light">
+        <img src="img/favicon.svg" alt="" width="36" height="36">
+        <span class="logo__text"><small>Cafetaria</small>De Zeeheld</span>
+      </div>
+      <p>Paterswoldseweg 19 · 9726 BB Groningen · <a href="tel:+31503123235">050 312 3235</a></p>
+      <p class="footer__copy">© <span id="year"></span> Cafetaria De Zeeheld</p>
+    </div>
+  </footer>
+
+  <a class="fab" href="tel:+31503123235" aria-label="Bel Cafetaria De Zeeheld">📞</a>
+  <button class="cart-bar" id="cart-bar" type="button" hidden></button>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+    <header class="drawer__head">
+      <h2 id="cart-title" data-i18n="cart.title">Jouw bestelling</h2>
+      <button class="icon-btn" type="button" data-close aria-label="Sluiten / Close">✕</button>
+    </header>
+    <div class="drawer__body">
+      <div class="cart-empty" id="cart-empty">
+        <span aria-hidden="true">🍟</span>
+        <p data-i18n="cart.empty">Je mandje is nog leeg. Kies iets lekkers uit het menu!</p>
+        <a class="btn btn--outline" href="#menu" data-close data-i18n="cart.toMenu">Naar het menu</a>
+      </div>
+      <ul class="cart-items" id="cart-items"></ul>
+      <form class="checkout" id="checkout" novalidate hidden>
+        <fieldset>
+          <legend data-i18n="cart.pickup">Afhaaltijd</legend>
+          <div id="pickup"></div>
+        </fieldset>
+        <fieldset>
+          <legend data-i18n="cart.details">Jouw gegevens</legend>
+          <label class="field"><span data-i18n="acc.name">Naam</span><input name="cname" autocomplete="name" required></label>
+          <label class="field"><span data-i18n="acc.phone">Telefoon</span><input name="cphone" type="tel" autocomplete="tel" required></label>
+          <label class="field"><span data-i18n="cart.note">Opmerking (optioneel)</span><textarea name="cnote" rows="2" maxlength="300" data-i18n-placeholder="cart.notePh"></textarea></label>
+        </fieldset>
+        <div class="totals" id="totals"></div>
+        <p class="form-error" id="checkout-error" hidden></p>
+        <button class="btn btn--primary btn--block" type="submit" id="place-btn">Bestelling plaatsen</button>
+        <p class="fineprint" data-i18n="cart.pay">Je betaalt bij het afhalen, met pin of contant.</p>
+      </form>
+    </div>
+  </aside>
+
+  <div class="modal" id="account-modal" role="dialog" aria-modal="true" aria-label="Account" hidden>
+    <div class="modal__box">
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Sluiten / Close">✕</button>
+      <div id="account-content"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="order-modal" role="dialog" aria-modal="true" aria-label="Bestelling / Order" hidden>
+    <div class="modal__box">
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Sluiten / Close">✕</button>
+      <div id="order-content"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/order.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
