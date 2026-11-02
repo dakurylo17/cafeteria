@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cafetaria De Zeeheld · Snackbar in Groningen</title>
   <meta name="description" content="Cafetaria De Zeeheld aan de Paterswoldseweg 19 in Groningen. Verse patat, Hollandse snacks, burgers en broodjes. Eten ter plaatse, afhalen en bezorgen.">
-  <meta name="theme-color" content="#14284b">
+  <meta name="theme-color" content="#1f2a2e">
   <meta property="og:title" content="Cafetaria De Zeeheld · Groningen">
   <meta property="og:description" content="Verse patat, Hollandse snacks en burgers. Bestel online en haal af op de Paterswoldseweg 19.">
   <meta property="og:image" content="img/photos/gevel-deur.jpg">
@@ -13,7 +13,7 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..900;1,6..96,500..700&family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/order.css">
   <script type="application/ld+json">
@@ -44,7 +44,7 @@
   <div class="topbar">
     <div class="container topbar__inner">
       <span class="status" id="status"><span class="status__dot"></span><span id="status-text">…</span></span>
-      <a class="topbar__phone" href="tel:+31503123235">📞 050 312 3235</a>
+      <a class="topbar__phone" href="tel:+31503123235"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>050 312 3235</a>
     </div>
   </div>
 
@@ -63,8 +63,8 @@
       </nav>
       <div class="header__actions">
         <button class="lang" id="lang" type="button" aria-label="Switch language / Taal wisselen">EN</button>
-        <button class="account-btn" id="account-btn" type="button"><span aria-hidden="true">👤</span><span id="account-label">Inloggen</span></button>
-        <button class="cart-btn" id="cart-btn" type="button" aria-label="Mandje / Cart"><span aria-hidden="true">🛒</span><span class="cart-btn__count" id="cart-count" hidden>0</span></button>
+        <button class="account-btn" id="account-btn" type="button"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span id="account-label">Inloggen</span></button>
+        <button class="cart-btn" id="cart-btn" type="button" aria-label="Mandje / Cart"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-btn__count" id="cart-count" hidden>0</span></button>
         <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -74,44 +74,44 @@
 
   <main id="top">
     <section class="hero">
+      <div class="fascia">
+        <div class="container fascia__board">
+          <h1 class="fascia__name"><span class="fascia__script">Cafetaria</span><span class="fascia__caps">De Zeeheld</span></h1>
+          <span class="street-sign">Paterswoldseweg 19</span>
+        </div>
+      </div>
       <div class="container hero__inner">
         <div class="hero__text">
-          <p class="eyebrow" data-i18n="hero.eyebrow">Snackbar · Paterswoldseweg 19, Groningen</p>
-          <h1 data-i18n="hero.title">Echte Hollandse snacks,<br><span>met liefde gebakken.</span></h1>
+          <p class="hero__title" data-i18n="hero.title">Echte Hollandse snacks, met liefde gebakken.</p>
           <p class="hero__lead" data-i18n="hero.lead">Grote porties patat, knapperige kroketten, sappige burgers en de beste pindasaus van de buurt. Kom langs, haal af of laat het bezorgen.</p>
           <div class="hero__cta">
             <a class="btn btn--primary" href="#menu" data-i18n="hero.order">Bestel online</a>
-            <a class="btn btn--ghost" href="tel:+31503123235" data-i18n="hero.call">Bel ons</a>
+            <a class="btn btn--outline" href="tel:+31503123235" data-i18n="hero.call">Bel ons</a>
           </div>
+          <p class="hero__ready" id="hero-ready" hidden></p>
           <div class="hero__meta">
             <a class="rating" href="#reviews">
               <span class="stars" style="--rating: 4.6" aria-hidden="true">★★★★★</span>
-              <strong>4,6</strong> <span data-i18n="hero.reviews">· 185 Google-reviews</span>
+              <strong>4,6</strong> <span data-i18n="hero.reviews">uit 185 Google-reviews</span>
             </a>
             <span class="price">€ 1–10 <span data-i18n="hero.pp">p.p.</span></span>
           </div>
         </div>
-        <div class="hero__art">
-          <figure class="hero__photo hero__photo--main">
+        <figure class="hero__window">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="hero__photo">
             <img src="img/photos/burger.jpg" width="590" height="780" alt="Burger met patat, mayonaise en ketchup" data-i18n-alt="photo.burger">
-          </figure>
-          <figure class="hero__photo hero__photo--small">
-            <img src="img/photos/gevel-deur.jpg" width="590" height="333" alt="De rode deur van Cafetaria De Zeeheld" data-i18n-alt="photo.door">
-          </figure>
-          <div class="hero__sticker" aria-hidden="true"><strong data-i18n="hero.sticker1">Grote</strong><span data-i18n="hero.sticker2">porties!</span></div>
-        </div>
+          </div>
+          <figcaption><span data-i18n="gal.photo">Foto</span>: Barbara M.</figcaption>
+        </figure>
       </div>
-      <svg class="waves" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 40c120 30 240 30 360 0s240-30 360 0 240 30 360 0 240-30 360 0v40H0z"/>
-      </svg>
-    </section>
-
-    <section class="services">
-      <div class="container services__grid">
-        <div class="service"><span class="service__icon">🪑</span><div><strong data-i18n="svc.dine">Eten ter plaatse</strong><small data-i18n="svc.dineSub">Gezellig binnen zitten</small></div></div>
-        <div class="service"><span class="service__icon">🛍️</span><div><strong data-i18n="svc.take">Online bestellen</strong><small data-i18n="svc.takeSub">Afhalen op een vaste tijd</small></div></div>
-        <div class="service"><span class="service__icon">🛵</span><div><strong data-i18n="svc.deliver">Bezorgen</strong><small data-i18n="svc.deliverSub">Warm bij je thuis</small></div></div>
-        <div class="service"><span class="service__icon">💶</span><div><strong data-i18n="svc.price">Voor elk budget</strong><small data-i18n="svc.priceSub">€ 1–10 per persoon</small></div></div>
+      <div class="services">
+        <div class="container services__grid">
+        <div class="service"><strong data-i18n="svc.dine">Eten ter plaatse</strong><small data-i18n="svc.dineSub">Gezellig binnen zitten</small></div>
+        <div class="service"><strong data-i18n="svc.take">Online bestellen</strong><small data-i18n="svc.takeSub">Afhalen op een vaste tijd</small></div>
+        <div class="service"><strong data-i18n="svc.deliver">Bezorgen</strong><small data-i18n="svc.deliverSub">Warm bij je thuis</small></div>
+        <div class="service"><strong data-i18n="svc.price">Voor elk budget</strong><small data-i18n="svc.priceSub">€ 1–10 per persoon</small></div>
+        </div>
       </div>
     </section>
 
@@ -131,7 +131,6 @@
     <section class="menu" id="menu">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow" data-i18n="menu.eyebrow">Onze menukaart</p>
           <h2 data-i18n="menu.title">Wat mag het zijn?</h2>
         </div>
 
@@ -139,7 +138,7 @@
           <div class="chips" id="chips" role="tablist"></div>
           <div class="menu__filters">
             <label class="search">
-              <span aria-hidden="true">🔍</span>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
               <input type="search" id="search" placeholder="Zoek een snack…" data-i18n-placeholder="menu.search" autocomplete="off">
             </label>
             <label class="toggle">
@@ -154,7 +153,6 @@
         <p class="menu__empty" id="menu-empty" hidden data-i18n="menu.empty">Niets gevonden. Probeer een andere zoekterm.</p>
 
         <div class="extras">
-          <span class="extras__icon" aria-hidden="true">🍦</span>
           <div>
             <strong data-i18n="extras.title">Wij verkopen ook (soft)ijs, milkshakes en diverse dranken.</strong>
             <p data-i18n="extras.text">Vraag aan de balie naar de smaken van vandaag. En vergeet de pindasaus niet!</p>
@@ -168,7 +166,6 @@
       <div class="container">
         <div class="reviews__head">
           <div class="section-head">
-            <p class="eyebrow" data-i18n="rev.eyebrow">Wat gasten zeggen</p>
             <h2 data-i18n="rev.title">Geliefd in de buurt</h2>
           </div>
           <div class="score">
@@ -202,7 +199,6 @@
     <section class="gallery" id="sfeer">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow" data-i18n="gal.eyebrow">Kom binnen</p>
           <h2 data-i18n="gal.title">Licht, schoon en gezellig</h2>
           <p class="section-lead" data-i18n="gal.text">Schuif aan bij een van onze tafels en eet je snack vers en warm, of haal je bestelling op aan de toonbank.</p>
         </div>
@@ -230,13 +226,13 @@
     </section>
 
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto" hidden>
-      <button type="button" class="lightbox__btn lightbox__close" data-lb="close" aria-label="Sluiten / Close">✕</button>
-      <button type="button" class="lightbox__btn lightbox__prev" data-lb="prev" aria-label="Vorige / Previous">‹</button>
+      <button type="button" class="lightbox__btn lightbox__close" data-lb="close" aria-label="Sluiten / Close"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <button type="button" class="lightbox__btn lightbox__prev" data-lb="prev" aria-label="Vorige / Previous"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
       <figure class="lightbox__figure">
         <img id="lightbox-img" src="" alt="">
         <figcaption id="lightbox-caption"></figcaption>
       </figure>
-      <button type="button" class="lightbox__btn lightbox__next" data-lb="next" aria-label="Volgende / Next">›</button>
+      <button type="button" class="lightbox__btn lightbox__next" data-lb="next" aria-label="Volgende / Next"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
     </div>
 
     <section class="info" id="info">
@@ -255,8 +251,8 @@
           </figure>
           <h2 data-i18n="info.contact">Contact &amp; adres</h2>
           <ul class="contact__list">
-            <li><span aria-hidden="true">📍</span><div><strong>Paterswoldseweg 19</strong><br>9726 BB Groningen</div></li>
-            <li><span aria-hidden="true">📞</span><div><a href="tel:+31503123235"><strong>050 312 3235</strong></a><br><small data-i18n="info.callHint">Bel voor afhalen of bezorgen</small></div></li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><div><strong>Paterswoldseweg 19</strong><br>9726 BB Groningen</div></li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg><div><a href="tel:+31503123235"><strong>050 312 3235</strong></a><br><small data-i18n="info.callHint">Bel voor afhalen of bezorgen</small></div></li>
           </ul>
           <div class="contact__cta">
             <a class="btn btn--primary" href="tel:+31503123235" data-i18n="info.call">Bel nu</a>
@@ -273,17 +269,17 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="logo logo--light">
-        <img src="img/favicon.svg" alt="" width="36" height="36">
-        <span class="logo__text"><small>Cafetaria</small>De Zeeheld</span>
+    <div class="container">
+      <p class="footer__name" aria-hidden="true"><span>Cafetaria</span>De Zeeheld</p>
+      <div class="footer__inner">
+        <p>Paterswoldseweg 19, 9726 BB Groningen</p>
+        <p><a href="tel:+31503123235">050 312 3235</a></p>
+        <p class="footer__copy">© <span id="year"></span> Cafetaria De Zeeheld</p>
       </div>
-      <p>Paterswoldseweg 19 · 9726 BB Groningen · <a href="tel:+31503123235">050 312 3235</a></p>
-      <p class="footer__copy">© <span id="year"></span> Cafetaria De Zeeheld</p>
     </div>
   </footer>
 
-  <a class="fab" href="tel:+31503123235" aria-label="Bel Cafetaria De Zeeheld">📞</a>
+  <a class="fab" href="tel:+31503123235" aria-label="Bel Cafetaria De Zeeheld"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg></a>
   <button class="cart-bar" id="cart-bar" type="button" hidden></button>
 
   <div class="overlay" id="overlay" hidden></div>
@@ -291,11 +287,10 @@
   <aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
     <header class="drawer__head">
       <h2 id="cart-title" data-i18n="cart.title">Jouw bestelling</h2>
-      <button class="icon-btn" type="button" data-close aria-label="Sluiten / Close">✕</button>
+      <button class="icon-btn" type="button" data-close aria-label="Sluiten / Close"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </header>
     <div class="drawer__body">
       <div class="cart-empty" id="cart-empty">
-        <span aria-hidden="true">🍟</span>
         <p data-i18n="cart.empty">Je mandje is nog leeg. Kies iets lekkers uit het menu!</p>
         <a class="btn btn--outline" href="#menu" data-close data-i18n="cart.toMenu">Naar het menu</a>
       </div>
@@ -321,14 +316,14 @@
 
   <div class="modal" id="account-modal" role="dialog" aria-modal="true" aria-label="Account" hidden>
     <div class="modal__box">
-      <button class="icon-btn modal__close" type="button" data-close aria-label="Sluiten / Close">✕</button>
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Sluiten / Close"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       <div id="account-content"></div>
     </div>
   </div>
 
   <div class="modal" id="order-modal" role="dialog" aria-modal="true" aria-label="Bestelling / Order" hidden>
     <div class="modal__box">
-      <button class="icon-btn modal__close" type="button" data-close aria-label="Sluiten / Close">✕</button>
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Sluiten / Close"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       <div id="order-content"></div>
     </div>
   </div>

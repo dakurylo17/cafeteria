@@ -138,7 +138,7 @@ const Cart = (() => {
     const savings = Shop.round2(q.subtotal * Shop.DISCOUNT);
     $("#totals").innerHTML = totalsHtml(q, !!user) + (user ? "" : `
       <div class="save-hint">
-        <span>🎁 ${t("cart.saveHint", fmtPrice(savings))}</span>
+        <span>${t("cart.saveHint", fmtPrice(savings))}</span>
         <button type="button" class="link-btn" data-open-account="register">${t("cart.saveBtn")}</button>
       </div>`);
     $("#place-btn").textContent = t("cart.place", fmtPrice(q.total));
@@ -165,7 +165,7 @@ const Cart = (() => {
     const prefix = plan.date === Shop.now().date ? "" : Shop.dayLabel(plan.date) + " ";
     const later = prevWhen === "later" && plan.slots.length > 0;
     box.innerHTML = `
-      ${plan.openNow ? "" : `<p class="notice">🌙 ${t("cart.closed", when)}</p>`}
+      ${plan.openNow ? "" : `<p class="notice">${t("cart.closed", when)}</p>`}
       <label class="radio">
         <input type="radio" name="when" value="asap" ${later ? "" : "checked"}>
         <span><strong>${t("cart.asap", when)}</strong></span>
@@ -177,7 +177,7 @@ const Cart = (() => {
             ${plan.slots.map((s) => `<option value="${s}" ${String(s) === prevSlot ? "selected" : ""}>${prefix}${fmtTime(s)}</option>`).join("")}
           </select>
         </div>` : ""}
-      <p class="hint">⏱ ${t("cart.prep", plan.prep)}</p>`;
+      <p class="hint">${t("cart.prep", plan.prep)}</p>`;
   }
 
   $("#pickup").addEventListener("change", (e) => {
@@ -265,7 +265,7 @@ const Cart = (() => {
     const message = o.status === "ready" ? t("order.readyMsg") : cancelled ? t("order.cancelledMsg") : "";
 
     $("#order-content").innerHTML = `
-      ${justPlaced ? `<p class="eyebrow">✅ ${t("order.thanks")}</p>` : ""}
+      ${justPlaced ? `<p class="order-thanks">${t("order.thanks")}</p>` : ""}
       <h2>${t("order.number", o.number)}</h2>
       <div class="ready-time ready-time--${o.status}">
         <small>${isToday ? t("order.readyAt") : t("order.readyDay", Shop.dayLabel(o.pickup.date))}</small>
@@ -279,9 +279,9 @@ const Cart = (() => {
       <ul class="order-lines">
         ${o.items.map((i) => `<li><span>${i.qty}×</span><span>${escapeHtml(i.name)}</span><span>${fmtPrice(i.price * i.qty)}</span></li>`).join("")}
       </ul>
-      ${o.note ? `<p class="order-note">💬 ${escapeHtml(o.note)}</p>` : ""}
+      ${o.note ? `<p class="order-note">${escapeHtml(o.note)}</p>` : ""}
       <div class="totals">${totalsHtml(o, o.member)}</div>
-      <p class="fineprint">💳 ${t("order.payAtPickup")} · 📍 ${t("order.where")}</p>
+      <p class="fineprint">${t("order.payAtPickup")}. ${t("order.where")}.</p>
       <button type="button" class="btn btn--primary btn--block" data-close>${t("order.again")}</button>`;
   }
 
@@ -293,8 +293,8 @@ const Cart = (() => {
     strip.dataset.order = o.id;
     strip.classList.toggle("is-ready", o.status === "ready");
     strip.innerHTML = o.status === "ready"
-      ? `<span>${t("order.stripReady", o.number)}</span><span class="order-strip__cta">${t("order.view")} →</span>`
-      : `<span>🍟 ${t("order.strip", o.number, Shop.whenText(o.pickup.date, o.pickup.time))}</span><span class="order-strip__cta">${t("order.view")} →</span>`;
+      ? `<span>${t("order.stripReady", o.number)}</span><span class="order-strip__cta">${t("order.view")}</span>`
+      : `<span>${t("order.strip", o.number, Shop.whenText(o.pickup.date, o.pickup.time))}</span><span class="order-strip__cta">${t("order.view")}</span>`;
   }
 
   /* ---------- Account ---------- */
@@ -343,7 +343,7 @@ const Cart = (() => {
         <button type="button" role="tab" class="tab ${reg ? "is-active" : ""}" aria-selected="${reg}" data-tab="register">${t("acc.register")}</button>
         <button type="button" role="tab" class="tab ${reg ? "" : "is-active"}" aria-selected="${!reg}" data-tab="login">${t("acc.login")}</button>
       </div>
-      <p class="perk">🎁 ${t("acc.perk")}</p>
+      <p class="perk">${t("acc.perk")}</p>
       <form class="account-form" id="account-form" novalidate>
         ${reg ? `
           <label class="field"><span>${t("acc.name")}</span><input name="name" autocomplete="name" required></label>

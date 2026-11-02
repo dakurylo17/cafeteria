@@ -57,7 +57,7 @@
       <ul class="ticket__items">
         ${o.items.map((i) => `<li><b>${i.qty}×</b> ${escapeHtml(i.name)}</li>`).join("")}
       </ul>
-      ${o.note ? `<p class="ticket__note">💬 ${escapeHtml(o.note)}</p>` : ""}
+      ${o.note ? `<p class="ticket__note">${escapeHtml(o.note)}</p>` : ""}
       <footer class="ticket__foot">
         <span>${t("k.placed", placed)} · ${t("cart.items", qty)} · <b>${fmtPrice(o.total)}</b></span>
         ${o.status === "cancelled" ? `<span class="pill pill--cancelled">${t("order.status.cancelled")}</span>` : ""}

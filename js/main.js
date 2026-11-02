@@ -23,6 +23,16 @@
     $("#status-text").textContent = text;
   }
 
+  // Live afhaaltijd op het eerste scherm, uit dezelfde planning als het mandje
+  function renderReady() {
+    const plan = Shop.pickupPlan(Math.max(1, Cart.count()));
+    const el = $("#hero-ready");
+    el.hidden = !plan;
+    if (plan) el.textContent = t("hero.ready", Shop.whenText(plan.date, plan.earliest));
+  }
+  document.addEventListener("cartchange", renderReady);
+  document.addEventListener("shopchange", renderReady);
+
   function renderHours() {
     const { day } = Shop.now();
     $("#hours-table tbody").innerHTML = WEEK_ORDER.map((d) => {
@@ -70,12 +80,11 @@
       // Foto alleen tonen als er niet gezocht/gefilterd wordt, zodat de resultaten compact blijven
       const photo = cat.photo && !q && !veg ? `<figure class="cat__photo">
           <img src="${cat.photo.src}" alt="${escapeHtml(cat.title[Shop.getLang()])}" loading="lazy" width="590" height="400">
-          <figcaption>📷 ${escapeHtml(cat.photo.credit)}</figcaption>
+          <figcaption>${escapeHtml(cat.photo.credit)}</figcaption>
         </figure>` : "";
       return `<article class="cat${photo ? " cat--photo" : ""}" id="cat-${cat.id}">
         ${photo}
         <header class="cat__head">
-          <span class="cat__icon" aria-hidden="true">${cat.icon}</span>
           <h3>${cat.title[Shop.getLang()]}</h3>
           <span class="cat__count">${items.length} ${t("menu.items")}</span>
         </header>
@@ -117,7 +126,7 @@
   function renderChips() {
     const visible = new Set($$(".cat", grid).map((el) => el.id.replace("cat-", "")));
     chips.innerHTML = MENU.filter((c) => visible.has(c.id)).map((c) =>
-      `<button type="button" class="chip" data-target="cat-${c.id}">${c.icon} ${c.title[Shop.getLang()]}</button>`
+      `<button type="button" class="chip" data-target="cat-${c.id}">${c.title[Shop.getLang()]}</button>`
     ).join("");
     lastActive = null;
     updateActiveChip();
@@ -177,6 +186,7 @@
     });
     $("#lang").textContent = Shop.getLang() === "nl" ? "EN" : "NL";
     renderStatus();
+    renderReady();
     renderHours();
     renderMenu();
   }
@@ -253,20 +263,7 @@
     if (e.key === "ArrowRight") showPhoto(lbIndex + 1);
   });
 
-  /* ---------- Animaties bij scrollen ---------- */
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.12 });
-    $$(".section-head, .review, .card, .extras, .service, .promo__inner").forEach((el) => {
-      el.classList.add("reveal");
-      io.observe(el);
-    });
-  }
-
   $("#year").textContent = new Date().getFullYear();
   applyLang();
-  setInterval(renderStatus, 60 * 1000);
+  setInterval(() => { renderStatus(); renderReady(); }, 60 * 1000);
 })();
