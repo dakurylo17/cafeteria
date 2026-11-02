@@ -263,6 +263,55 @@
     if (e.key === "ArrowRight") showPhoto(lbIndex + 1);
   });
 
+  /* ---------- Tegelvloer ---------- */
+  // De zeshoekige vloer van de zaak, bij elk bezoek net anders gelegd
+  const TILE_COLORS = ["#e0a93b", "#e0a93b", "#d46a2c", "#3f4350", "#3f4350", "#d9d3c7", "#a9a49b"];
+  const floors = $$("[data-floor]");
+
+  function layFloor(el, animate) {
+    const w = el.clientWidth;
+    const h = el.clientHeight;
+    const r = w < 600 ? 20 : 27;
+    const hw = Math.sqrt(3) * r;
+    const corner = (cx, cy) => [0, 1, 2, 3, 4, 5].map((i) => {
+      const a = (Math.PI / 180) * (60 * i - 90);
+      return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`;
+    }).join(" ");
+    let tiles = "";
+    for (let row = 0; row * 1.5 * r < h + r; row++) {
+      const cy = row * 1.5 * r;
+      for (let cx = row % 2 ? hw / 2 : 0; cx < w + hw; cx += hw) {
+        const color = TILE_COLORS[Math.floor(Math.random() * TILE_COLORS.length)];
+        const delay = Math.round(cx / w * 700 + row * 60 + Math.random() * 120);
+        tiles += `<polygon points="${corner(cx, cy)}" fill="${color}" style="--d:${delay}"/>`;
+      }
+    }
+    el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><g stroke="#fbfaf8" stroke-width="3">${tiles}</g></svg>`;
+    el.dataset.width = w;
+    el.classList.toggle("is-laying", animate);
+  }
+
+  if ("IntersectionObserver" in window) {
+    // Pas leggen als de vloer in beeld komt, zodat je het ziet gebeuren
+    const floorIo = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { layFloor(en.target, true); floorIo.unobserve(en.target); }
+      });
+    }, { threshold: 0.2 });
+    floors.forEach((el) => floorIo.observe(el));
+  } else {
+    floors.forEach((el) => layFloor(el, false));
+  }
+  let floorTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(floorTimer);
+    floorTimer = setTimeout(() => {
+      floors.forEach((el) => {
+        if (el.dataset.width && Math.abs(el.clientWidth - el.dataset.width) > 40) layFloor(el, false);
+      });
+    }, 200);
+  });
+
   $("#year").textContent = new Date().getFullYear();
   applyLang();
   setInterval(() => { renderStatus(); renderReady(); }, 60 * 1000);
